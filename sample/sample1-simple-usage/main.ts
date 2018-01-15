@@ -1,15 +1,15 @@
-import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
-import {Component, NgModule} from "@angular/core";
-import {BrowserModule} from "@angular/platform-browser";
-import {TabsModule} from "../../src/index";
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { Component, NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { TabsModule } from '../../src/index';
 
 @Component({
-    selector: "app",
-    template: `
+  selector: 'app',
+  template: `
 <div class="container">
 
     <!-- regular tabs -->
-    <tabset>
+    <tabset displayMode="style>
         <tab title="About me">
             Its all about me.
         </tab>
@@ -24,7 +24,7 @@ import {TabsModule} from "../../src/index";
     <br/><br/>
     
     <!-- tabs with custom heading templates -->
-    <tabset>
+    <tabset displayMode="style">
         <tab>
             <span *tabHeading>
                 <b style="color: deepskyblue">About</b> <i style="color: deeppink">me</i>
@@ -68,25 +68,14 @@ import {TabsModule} from "../../src/index";
 `
 })
 export class Sample1App {
-
-    tabs: string[] = ["Home", "About me", "Contacts", "Map"];
-
+  tabs: string[] = ['Home', 'About me', 'Contacts', 'Map'];
 }
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        TabsModule
-    ],
-    declarations: [
-        Sample1App
-    ],
-    bootstrap: [
-        Sample1App
-    ]
+  imports: [BrowserModule, TabsModule],
+  declarations: [Sample1App],
+  bootstrap: [Sample1App]
 })
-export class Sample1Module {
-
-}
+export class Sample1Module {}
 
 platformBrowserDynamic().bootstrapModule(Sample1Module);
